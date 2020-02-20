@@ -80,11 +80,9 @@ class Preview extends React.Component {
       ekstenzija = documentStructure[this.props.idDokumenta]["Ekstenzija"];
     }
 
-    console.log(verzija);
-    console.log(opisDokumenta);
-
     return (
       <div>
+        <div id="previewComponent"></div>
         <div className="ekstenzijaDokumenta">{ekstenzija}</div>
         <h5 className="nazivDokumenta">{naziv}</h5>
         <div className="previewData">
@@ -155,7 +153,7 @@ class Preview extends React.Component {
             <p className="naslov">Naziv </p>
             <p className="vrijednost">{naziv}</p>
             <p className="naslov">Djelovodni broj</p>
-            <p className="vrijednost">{djelotvorniBroj}}</p>
+            <p className="vrijednost">{djelotvorniBroj}</p>
             <p className="naslov">Opis dokumenta</p>
             <p className="vrijednost">{opisDokumenta}</p>
             <p className="naslov">Subjekt</p>

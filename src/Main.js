@@ -10,14 +10,14 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     console.log(this.props.match.params.id);
-    this.state = { id: this.props.match.params.id };
+    this.state = { id: this.props.match.params.id, idPreview: "" };
     this.callPreview = this.callPreview.bind(this);
   }
 
-  callPreview({ currentTarget }) {
-    this.state = { idPreview: currentTarget.id };
+  callPreview = ({ currentTarget }) => {
+    this.setState({ idPreview: currentTarget.id });
     console.log(this.state.idPreview);
-  }
+  };
 
   render() {
     var idDokumenta = [];
@@ -78,7 +78,7 @@ class Main extends React.Component {
     return (
       <div className="row">
         <div className="col-7">
-          <h6 className="dokumentiNaslov">DOKUMENTI</h6>
+          <h6 className="dokumentiNaslov">DOKUMENTI{this.state.idPreview}</h6>
           <div className="opisFoldera">
             <div className="row">
               <p className="naslovinformacijeoFolder">
@@ -148,11 +148,16 @@ class Main extends React.Component {
             </Table>
           </div>
         </div>
-        <div className="col previewBar">
-          <div id="previewComponent">
-            <Preview idDokumenta="0" />
+
+        {this.state.idPreview === "" ? (
+          <div></div>
+        ) : (
+          <div className="col previewBar">
+            <div id="previewComponent">
+              <Preview idDokumenta={this.state.idPreview} />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     );
   }

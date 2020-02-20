@@ -128,5 +128,21 @@
     "Oznaka dokumenta": "01/2-23/1-19",
     "Način prijema": "Lorem ipsum",
     "Ekstenzija": "pdf"
+  },
+  "5": {
+    "id dokumenta": 8,
+    "Naziv dokumenta": "Lorem",
+    "Broj": 1688,
+    "Status": "Ipsum lorem",
+    "Autor": "Jovana Jovanović",
+    "Tip": "Lorem ipsum",
+    "Datum": "16.03.2018",
+    "Verzija": "3",
+    "Djelotvorni broj": "07/1-23/1-23",
+    "Opis dokumenta": "Lorem im dolor ",
+    "Subjekt": "Lorem ipsum dffolor sit amet ipsum",
+    "Oznaka dokumenta": "07/1-23/1-23",
+    "Način prijema": "Est orem ipsum ",
+    "Ekstenzija": "pdf"
   }
 }
