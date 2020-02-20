@@ -1,0 +1,128 @@
+{
+  "FOLDERI": {
+    "id": 1,
+    "name": "Folder 1",
+    "folderType": "organizer",
+    "parentFolder": [
+      {
+        "id": 2,
+        "name": "Subfolder 1",
+        "folderType": "organizer",
+        "parentFolder": [
+          {
+            "id": 3,
+            "name": "1",
+            "folderType": "docFolder",
+            "parentFolder": null
+          },
+          {
+            "id": 4,
+            "name": "2",
+            "folderType": "docFolder",
+            "parentFolder": null
+          },
+          {
+            "id": 5,
+            "name": "3",
+            "folderType": "docFolder",
+            "parentFolder": null
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Subfolder 2",
+        "folderType": "organizer",
+        "parentFolder": [
+          {
+            "id": 7,
+            "name": "1",
+            "folderType": "docFolder",
+            "parentFolder": null
+          },
+          {
+            "id": 8,
+            "name": "2",
+            "folderType": "docFolder",
+            "parentFolder": null
+          },
+          {
+            "id": 9,
+            "name": "3",
+            "folderType": "docFolder",
+            "parentFodler": null
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Subfolder 3",
+        "folderType": "organizer",
+        "parentFolder": [
+          {
+            "id": 11,
+            "name": "1",
+            "folderType": "docFolder",
+            "parentFolder": null
+          },
+          {
+            "id": 12,
+            "name": "2",
+            "folderType": "docFolder",
+            "parentFolder": null
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "name": "Subfolder 4",
+        "folderType": "organizer",
+        "parentFolder": [
+          {
+            "id": 14,
+            "name": "1",
+            "folderType": "docFolder",
+            "parentFolder": null
+          },
+          {
+            "id": 15,
+            "name": "2",
+            "folderType": "docFolder",
+            "parentFolder": null
+          },
+          {
+            "id": 16,
+            "name": "3",
+            "folderType": "docFolder",
+            "parentFolder": null
+          },
+          {
+            "id": 17,
+            "name": "4",
+            "folderType": "docFolder",
+            "parentFolder": null
+          },
+          {
+            "id": 18,
+            "name": "5",
+            "folderType": "docFolder",
+            "parentFolder": null
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "name": "Subfolder 5",
+        "folderType": "organizer",
+        "parentFolder": [
+          {
+            "id": 20,
+            "name": "1",
+            "folderType": "docFolder",
+            "parentFolder": null
+          }
+        ]
+      }
+    ]
+  }
+}

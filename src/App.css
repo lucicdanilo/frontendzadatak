@@ -1,38 +1,253 @@
-.App {
-  text-align: center;
+.container-fluid {
+  background-color: #e8f4ff;
+  height: 1000px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navigationBar {
+  background-color: #e8f4ff;
+  height: 1000px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.centralBar {
+  margin-top: 0.2%;
+  background-color: #ffffff;
+  height: 1000px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.previewBar {
+  background-color: #e8f4ff;
+  border-radius: 9px;
+  margin: 1.5%;
+  margin-right: 4%;
+  height: 800px;
 }
 
-.App-link {
-  color: #61dafb;
+.titleBar {
+  background-color: #e8f4ff;
+  height: 7%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.searchBar {
+  background-color: #ffffff;
+}
+.accountBar {
+  background-color: #ffffff;
+}
+
+.form-control {
+  width: 60% !important;
+  margin-top: 1.5%;
+  margin-left: 25%;
+  background-color: #f6f7f9;
+}
+
+.avatar {
+  margin-top: 4.5%;
+  margin-left: 65%;
+  vertical-align: middle;
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+}
+
+.metismenu {
+  margin-top: -10%;
+  background-color: #00a9de;
+}
+
+.metismenu-container {
+  background-color: #e8f4ff;
+}
+
+.metismenu-link.active {
+  background-color: #28a9e3;
+  color: #f8fbff;
+  text-decoration: none;
+}
+
+.metismenu-link.active:hover {
+  text-decoration: none;
+  color: #f8fbff;
+}
+
+.metismenu-link {
+  color: #37393c;
+  border-radius: 5px;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.metismenu-link.has-active-child {
+  color: #37393c;
+}
+
+.metismenu::after {
+  -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0) inset;
+}
+
+.metismenu-container .metismenu-container {
+  box-shadow: none;
+  -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0) inset;
+}
+
+.metismenu-link:hover {
+  color: #37393c;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.metismenu-icon {
+  color: #00a9de;
+}
+
+.metismenu-link.active > .metismenu-icon {
+  color: #ffffff;
+}
+
+.dokumentiNaslov {
+  margin-top: 2%;
+  margin-left: 4%;
+  padding-bottom: 6px;
+  color: #00a9de;
+  font-weight: bolder;
+  border-bottom: 2px solid #00a9de;
+  width: fit-content;
+}
+
+.opisFoldera {
+  background-color: #e8f4ff;
+  margin-top: 4%;
+  margin-left: 4%;
+  margin-right: 2%;
+  padding: 3%;
+  border-radius: 8px;
+}
+
+.naslovinformacijeoFolder {
+  font-weight: bolder;
+}
+
+.informacijeoFolder {
+  color: #28a9e3;
+}
+
+.opis {
+  font-weight: normal;
+  padding-right: 3%;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.previewData {
+  margin-top: 4%;
+}
+
+.previewButtons {
+  margin-top: 8%;
+  margin-left: 2%;
+}
+
+.btn-light {
+  margin-right: 3%;
+  background-color: #ffff !important;
+}
+
+.primary {
+  margin-right: 3%;
+  background-color: #00a9de !important;
+}
+
+.izmjeniDocument {
+  margin-top: 7%;
+  font-weight: 600;
+}
+
+.btn-link {
+  text-align: right;
+  color: #00a9de !important;
+  font-weight: 600 !important;
+  float: right;
+}
+
+.infoAboutDocument {
+  margin-top: 3%;
+}
+
+.naslov {
+  font-size: smaller;
+  margin: 0px;
+}
+
+.vrijednost {
+  font-weight: 500;
+  margin: 0px;
+  margin-bottom: 2%;
+}
+
+table {
+  margin-top: 3%;
+  margin-left: 3%;
+  border-collapse: collapse;
+}
+
+thead {
+  font-size: 14px;
+}
+
+tr {
+  font-size: smaller;
+}
+
+tbody > tr {
+  background-color: #e8f4ff;
+}
+
+.table-hover > tbody > tr:hover {
+  background-color: #00a9de !important;
+  color: #f8fbff !important;
+}
+
+td:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+td:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.tableRowButton {
+  margin: 0px !important;
+  padding: 0px !important;
+  border: none !important;
+  background-color: #f8fbff !important;
+}
+
+.iconInRow:hover {
+  color: #ffffff !important;
+  background-color: #00a9de !important;
+}
+
+.buttonInRow {
+  background-color: #f8fbff !important;
+  border: 0px !important;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.nazivDokumenta {
+  margin-left: 2%;
+}
+
+.ekstenzijaDokumenta {
+  margin-left: 2%;
 }
