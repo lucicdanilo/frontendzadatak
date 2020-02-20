@@ -80,10 +80,23 @@ class Preview extends React.Component {
       ekstenzija = documentStructure[this.props.idDokumenta]["Ekstenzija"];
     }
 
+    const extension = () => {
+      switch (ekstenzija) {
+        case "pdf":
+          return (
+            <img src={require("./icons/pdf.png")} height="35" width="30" />
+          );
+        case "doc":
+          return (
+            <img src={require("./icons/doc.png")} height="35" width="35" />
+          );
+      }
+    };
+
     return (
       <div>
         <div id="previewComponent"></div>
-        <div className="ekstenzijaDokumenta">{ekstenzija}</div>
+        <div className="ekstenzijaDokumenta">{extension()}</div>
         <h5 className="nazivDokumenta">{naziv}</h5>
         <div className="previewData">
           <p

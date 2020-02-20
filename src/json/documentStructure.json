@@ -13,7 +13,7 @@
     "Subjekt": "Lorem ipsum dolor sit amet",
     "Oznaka dokumenta": "01/2-23/1-19",
     "Način prijema": "Lorem ipsum",
-    "Ekstenzija": "pdf"
+    "Ekstenzija": "doc"
   },
   "1": [
     {
@@ -46,7 +46,7 @@
       "Subjekt": "Lorem ipsum dolor sit amet",
       "Oznaka dokumenta": "05/2-23/1-19",
       "Način prijema": "Lorem ipsum",
-      "Ekstenzija": "pdf"
+      "Ekstenzija": "doc"
     },
     {
       "id dokumenta": 3,
@@ -62,7 +62,7 @@
       "Subjekt": "Lorem ipsum doloccr sit amet",
       "Oznaka dokumenta": "56/2-23/1-19",
       "Način prijema": "Lorem ipsum",
-      "Ekstenzija": "pdf"
+      "Ekstenzija": "doc"
     },
     {
       "id dokumenta": 4,
@@ -111,7 +111,7 @@
     "Subjekt": "Lorem ipsum dolor sit amet",
     "Oznaka dokumenta": "01/2-23/1-19",
     "Način prijema": "Lorem ipsum",
-    "Ekstenzija": "pdf"
+    "Ekstenzija": "doc"
   },
   "4": {
     "id dokumenta": 7,
@@ -143,6 +143,6 @@
     "Subjekt": "Lorem ipsum dffolor sit amet ipsum",
     "Oznaka dokumenta": "07/1-23/1-23",
     "Način prijema": "Est orem ipsum ",
-    "Ekstenzija": "pdf"
+    "Ekstenzija": "doc"
   }
 }
