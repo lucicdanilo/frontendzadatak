@@ -2,7 +2,7 @@
   "0": {
     "id dokumenta": 0,
     "Naziv dokumenta": "Lorem ipsum dolor",
-    "Broj": 1689,
+    "Broj": "1689",
     "Status": "Lorem ipsum",
     "Autor": "Marko Marković",
     "Tip": "Lorem ipsum",
@@ -19,7 +19,7 @@
     {
       "id dokumenta": 1,
       "Naziv dokumenta": "Lorem dolro sit",
-      "Broj": 1312,
+      "Broj": "1312",
       "Status": "Lorem ipsum",
       "Autor": "Ivan Ivanović",
       "Tip": "Lorem ipsum",
@@ -35,7 +35,7 @@
     {
       "id dokumenta": 2,
       "Naziv dokumenta": "Lorem ipsum",
-      "Broj": 1688,
+      "Broj": "1688",
       "Status": "Lorem ipsum",
       "Autor": "Nikola Nikolić",
       "Tip": "Lorem ipsum",
@@ -51,7 +51,7 @@
     {
       "id dokumenta": 3,
       "Naziv dokumenta": "Lorem ipsum dolor",
-      "Broj": 1656,
+      "Broj": "1656",
       "Status": "Lorem ipsum",
       "Autor": "Nikola Nikolić",
       "Tip": "Lorem ipsum",
@@ -67,7 +67,7 @@
     {
       "id dokumenta": 4,
       "Naziv dokumenta": "Lorem ipsum dolor upp",
-      "Broj": 1618,
+      "Broj": "1618",
       "Status": "Lorem ipsum",
       "Autor": "Marko Nikolić",
       "Tip": "Lorem ipsum",
@@ -84,7 +84,7 @@
   "2": {
     "id dokumenta": 5,
     "Naziv dokumenta": "Lorem ipsum ipodioum",
-    "Broj": 1639,
+    "Broj": "1639",
     "Status": "Lorem ipsum",
     "Autor": "Marko Marković",
     "Tip": "Lorem ipsum",
@@ -100,7 +100,7 @@
   "3": {
     "id dokumenta": 6,
     "Naziv dokumenta": "Lorem ipsum ametvc",
-    "Broj": 1689,
+    "Broj": "1689",
     "Status": "Lorem ipsum",
     "Autor": "Marko Marković",
     "Tip": "Lorem ipsum",
@@ -116,7 +116,7 @@
   "4": {
     "id dokumenta": 7,
     "Naziv dokumenta": "Lorem ipsu amet",
-    "Broj": 1687,
+    "Broj": "1687",
     "Status": "Lorem ipsum",
     "Autor": "Nikola Marković",
     "Tip": "Lorem ipsum",
@@ -132,7 +132,7 @@
   "5": {
     "id dokumenta": 8,
     "Naziv dokumenta": "Lorem",
-    "Broj": 1688,
+    "Broj": "1688",
     "Status": "Ipsum lorem",
     "Autor": "Jovana Jovanović",
     "Tip": "Lorem ipsum",

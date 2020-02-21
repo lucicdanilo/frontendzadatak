@@ -1,11 +1,19 @@
 import React from "react";
 import "./App.css";
 import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
-import { Envelope, Download, Upload } from "react-bootstrap-icons";
+import { Envelope, Download, Upload, Plus, X } from "react-bootstrap-icons";
 import documentStructure from "./json/documentStructure";
 
 class Preview extends React.Component {
+  showPopUp = () => {
+    document.getElementById("dimScreen").style.visibility = "visible";
+  };
+
+  hidePopUp = () => {
+    document.getElementById("dimScreen").style.visibility = "hidden";
+  };
   render() {
     var idDokumenta = this.props.idDokumenta;
 
@@ -61,7 +69,6 @@ class Preview extends React.Component {
         }
       }
     } else {
-      console.log(documentStructure[this.props.idDokumenta]);
       naziv = documentStructure[this.props.idDokumenta]["Naziv dokumenta"];
       status = documentStructure[this.props.idDokumenta]["Status"];
       verzija = documentStructure[this.props.idDokumenta]["Verzija"];
@@ -90,6 +97,8 @@ class Preview extends React.Component {
           return (
             <img src={require("./icons/doc.png")} height="35" width="35" />
           );
+        default:
+          return <div></div>;
       }
     };
 
@@ -160,7 +169,9 @@ class Preview extends React.Component {
           </ButtonToolbar>
           <div className="izmjeniDocument">
             Informacije o dokumentu
-            <div className="btn btn-link">IZMIJENI</div>
+            <div className="btn btn-link" onClick={this.showPopUp}>
+              IZMIJENI
+            </div>
           </div>
           <div className="infoAboutDocument">
             <p className="naslov">Naziv </p>
@@ -175,6 +186,97 @@ class Preview extends React.Component {
             <p className="vrijednost">{oznakaDokumenta}</p>
             <p className="naslov">Način prijema</p>
             <p className="vrijednost">{nacinPrijema}</p>
+          </div>
+        </div>
+        <div id="dimScreen">
+          <div className="closePopUp" onClick={this.hidePopUp}>
+            <X size={40} />
+          </div>
+          <div id="popUp">
+            <div className="ekstenzijaDokumenta">{extension()}</div>
+            <h5 className="nazivDokumenta">{naziv}</h5>
+            <div className="verIautor">
+              <p className="verzija">Verzija: {verzija}</p>
+              <p className="autor">Autor: {autor}</p>
+            </div>
+            <div className="dodajNovoPoljeButton">
+              <Button variant="outline-secondary">
+                <Plus size={25} />
+                DODAJ NOVO POLJE
+              </Button>
+            </div>
+            <div className="popUpPolja">
+              <Form>
+                <div class="container">
+                  <div class="row">
+                    <div class="col">
+                      <Form.Group>
+                        <Form.Label>Naziv dokumenta</Form.Label>
+                        <Form.Control
+                          type="text"
+                          className="popUpTextInput"
+                          value={naziv}
+                        />
+                      </Form.Group>
+                    </div>
+                    <div class="col">
+                      <Form.Group>
+                        <Form.Label>Djelotvorni broj</Form.Label>
+                        <Form.Control
+                          type="text"
+                          className="popUpTextInput"
+                          value={djelotvorniBroj}
+                        />
+                      </Form.Group>
+                    </div>
+                    <div class="col">
+                      <Form.Group>
+                        <Form.Label>Opis dokumenta</Form.Label>
+                        <Form.Control
+                          type="text"
+                          className="popUpTextInput"
+                          value={opisDokumenta}
+                        />
+                      </Form.Group>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col">
+                      <Form.Group>
+                        <Form.Label>Subjekt</Form.Label>
+                        <Form.Control
+                          type="text"
+                          className="popUpTextInput"
+                          value={subjekt}
+                        />
+                      </Form.Group>
+                    </div>
+                    <div class="col">
+                      <Form.Group>
+                        <Form.Label>Oznaka dokumenta</Form.Label>
+                        <Form.Control
+                          type="text"
+                          className="popUpTextInput"
+                          value={oznakaDokumenta}
+                        />
+                      </Form.Group>
+                    </div>
+                    <div class="col">
+                      <Form.Group>
+                        <Form.Label>Način prijema</Form.Label>
+                        <Form.Control
+                          type="text"
+                          className="popUpTextInput"
+                          value={nacinPrijema}
+                        />
+                      </Form.Group>
+                    </div>
+                  </div>
+                </div>
+              </Form>
+            </div>
+            <Button className="popUpSacuvajIzmjene" variant="primary">
+              SAČUVAJ IZMJENE
+            </Button>
           </div>
         </div>
       </div>
