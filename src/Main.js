@@ -9,14 +9,12 @@ import { ThreeDots } from "react-bootstrap-icons";
 class Main extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props.match.params.id);
     this.state = { id: this.props.match.params.id, idPreview: "" };
     this.callPreview = this.callPreview.bind(this);
   }
 
   callPreview = ({ currentTarget }) => {
     this.setState({ idPreview: currentTarget.id });
-    console.log(this.state.idPreview);
   };
 
   render() {
@@ -90,7 +88,7 @@ class Main extends React.Component {
                       marginLeft: "8%"
                     }}
                   >
-                    Naziv foldera:{" "}
+                    Naziv foldera:
                     <span className="informacijeoFolder">{nazivFoldera}</span>
                   </p>
                   <p
@@ -100,7 +98,7 @@ class Main extends React.Component {
                       marginLeft: "8%"
                     }}
                   >
-                    Sektor:{" "}
+                    Sektor:
                     <span className="informacijeoFolder">{sektorFoldera}</span>
                   </p>
                   <p
@@ -110,7 +108,7 @@ class Main extends React.Component {
                       marginLeft: "8%"
                     }}
                   >
-                    Datum kreiranja:{" "}
+                    Datum kreiranja:
                     <span className="informacijeoFolder">
                       {datumKreiranjaFoldera}
                     </span>
@@ -122,7 +120,7 @@ class Main extends React.Component {
                       marginLeft: "8%"
                     }}
                   >
-                    Kreator:{" "}
+                    Kreator:
                     <span className="informacijeoFolder">{kreatorFoldera}</span>
                   </p>
                 </div>

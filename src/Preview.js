@@ -7,13 +7,65 @@ import { Envelope, Download, Upload, Plus, X } from "react-bootstrap-icons";
 import documentStructure from "./json/documentStructure";
 
 class Preview extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      popUp2text: "",
+      popUp2type: "",
+      isPopUp2Clicked: 0,
+      fieldsFromPopUp: ""
+    };
+
+    this.fieldsFromPopUp = [];
+
+    this.handleSubmitPopUp2 = this.handleSubmitPopUp2.bind(this);
+
+    this.handleChange2PopUpText = this.handleChange2PopUpText.bind(this);
+    this.handleChange2PopUpType = this.handleChange2PopUpType.bind(this);
+  }
+
+  handleSubmitPopUp2(event) {
+    event.preventDefault();
+    if (this.state.popUp2type == "Izaberite" || this.state.popUp2type == "") {
+      alert("Izaberite tip polja");
+    } else if (this.state.popUp2text == "") {
+      alert("Unesite naziv polja");
+    } else {
+      document.getElementById("dodajPoljePopUp").style.visibility = "hidden";
+      this.setState({ isPopUp2Clicked: 1 });
+    }
+  }
+
   showPopUp = () => {
     document.getElementById("dimScreen").style.visibility = "visible";
   };
 
   hidePopUp = () => {
+    this.setState({ popUp2text: "", popUp2type: "" });
+    this.fieldsFromPopUp = [];
+    this.forceUpdate();
     document.getElementById("dimScreen").style.visibility = "hidden";
+    document.getElementById("dodajPoljePopUp").style.visibility = "hidden";
   };
+
+  showPopUpDodajPolje = () => {
+    document.getElementById("dodajPoljePopUp").style.visibility = "visible";
+  };
+
+  closePopUp2 = () => {
+    document.getElementById("dodajPoljePopUp").style.visibility = "hidden";
+  };
+
+  handleChange2PopUpText(event) {
+    this.setState({ popUp2text: event.target.value });
+  }
+
+  handleChange2PopUpType(event) {
+    this.setState({ popUp2type: event.target.value });
+  }
+
+  handleSubmitPopUp() {}
+
   render() {
     var idDokumenta = this.props.idDokumenta;
 
@@ -31,9 +83,6 @@ class Preview extends React.Component {
     var nacinPrijema;
     var ekstenzija;
 
-    console.log(this.props.idDokumenta);
-
-    console.log(documentStructure[this.props.idDokumenta].length);
     if (documentStructure[this.props.idDokumenta].length) {
       for (
         var i = 0;
@@ -85,6 +134,48 @@ class Preview extends React.Component {
         documentStructure[this.props.idDokumenta]["Oznaka dokumenta"];
       nacinPrijema = documentStructure[this.props.idDokumenta]["Način prijema"];
       ekstenzija = documentStructure[this.props.idDokumenta]["Ekstenzija"];
+    }
+
+    if (this.state.isPopUp2Clicked) {
+      console.log(this.state.isPopUp2Clicked);
+      if (this.state.popUp2type == "Text") {
+        this.fieldsFromPopUp.push(
+          <div class="col">
+            <Form.Group>
+              <Form.Label className="popUpLabel">
+                {this.state.popUp2text}
+              </Form.Label>
+              <Form.Control type="text" className="popUpTextInput" />
+            </Form.Group>
+          </div>
+        );
+      }
+      if (this.state.popUp2type == "Checkbox") {
+        this.fieldsFromPopUp.push(
+          <div class="col">
+            <Form.Group>
+              <Form.Label className="popUpLabel">
+                {this.state.popUp2text}
+              </Form.Label>
+              <Form.Control type="checkbox" className="popUpCheckBox" />
+            </Form.Group>
+          </div>
+        );
+      }
+      if (this.state.popUp2type == "Textarea") {
+        this.fieldsFromPopUp.push(
+          <div class="col">
+            <Form.Group>
+              <Form.Label className="popUpLabel">
+                {this.state.popUp2text}
+              </Form.Label>
+              <Form.Control type="textarea" className="popUpTextArea" />
+            </Form.Group>
+          </div>
+        );
+      }
+
+      this.setState({ isPopUp2Clicked: 0 });
     }
 
     const extension = () => {
@@ -200,83 +291,135 @@ class Preview extends React.Component {
               <p className="autor">Autor: {autor}</p>
             </div>
             <div className="dodajNovoPoljeButton">
-              <Button variant="outline-secondary">
+              <Button
+                variant="outline-secondary"
+                onClick={this.showPopUpDodajPolje}
+              >
                 <Plus size={25} />
                 DODAJ NOVO POLJE
               </Button>
             </div>
             <div className="popUpPolja">
-              <Form>
+              <Form onSubmit={this.handleSubmitPopUp}>
                 <div class="container">
                   <div class="row">
                     <div class="col">
                       <Form.Group>
-                        <Form.Label>Naziv dokumenta</Form.Label>
+                        <Form.Label className="popUpLabel">
+                          Naziv dokumenta
+                        </Form.Label>
                         <Form.Control
                           type="text"
                           className="popUpTextInput"
-                          value={naziv}
+                          defaultValue={naziv}
                         />
                       </Form.Group>
                     </div>
                     <div class="col">
                       <Form.Group>
-                        <Form.Label>Djelotvorni broj</Form.Label>
+                        <Form.Label className="popUpLabel">
+                          Djelotvorni broj
+                        </Form.Label>
                         <Form.Control
                           type="text"
                           className="popUpTextInput"
-                          value={djelotvorniBroj}
+                          defaultValue={djelotvorniBroj}
                         />
                       </Form.Group>
                     </div>
                     <div class="col">
                       <Form.Group>
-                        <Form.Label>Opis dokumenta</Form.Label>
+                        <Form.Label className="popUpLabel">
+                          Opis dokumenta
+                        </Form.Label>
                         <Form.Control
                           type="text"
                           className="popUpTextInput"
-                          value={opisDokumenta}
+                          defaultValue={opisDokumenta}
                         />
                       </Form.Group>
                     </div>
                     <div class="w-100"></div>
                     <div class="col">
                       <Form.Group>
-                        <Form.Label>Subjekt</Form.Label>
+                        <Form.Label className="popUpLabel">Subjekt</Form.Label>
                         <Form.Control
                           type="text"
                           className="popUpTextInput"
-                          value={subjekt}
+                          defaultValue={subjekt}
                         />
                       </Form.Group>
                     </div>
                     <div class="col">
                       <Form.Group>
-                        <Form.Label>Oznaka dokumenta</Form.Label>
+                        <Form.Label className="popUpLabel">
+                          Oznaka dokumenta
+                        </Form.Label>
                         <Form.Control
                           type="text"
                           className="popUpTextInput"
-                          value={oznakaDokumenta}
+                          defaultValue={oznakaDokumenta}
                         />
                       </Form.Group>
                     </div>
                     <div class="col">
                       <Form.Group>
-                        <Form.Label>Način prijema</Form.Label>
+                        <Form.Label className="popUpLabel">
+                          Način prijema
+                        </Form.Label>
                         <Form.Control
                           type="text"
                           className="popUpTextInput"
-                          value={nacinPrijema}
+                          defaultValue={nacinPrijema}
                         />
                       </Form.Group>
                     </div>
+                    <div class="w-100"></div>
+                    <div>{this.fieldsFromPopUp}</div>
                   </div>
                 </div>
+                <Button
+                  className="popUpSacuvajIzmjene"
+                  variant="primary"
+                  type="submit"
+                >
+                  SAČUVAJ IZMJENE
+                </Button>
               </Form>
             </div>
-            <Button className="popUpSacuvajIzmjene" variant="primary">
-              SAČUVAJ IZMJENE
-            </Button>
+          </div>
+          <div id="dodajPoljePopUp">
+            <div className="titleDodajPoljePopUp">Dodaj polje</div>
+            <div className="closePopUp2" onClick={this.closePopUp2}>
+              <X size={35} />
+            </div>
+            <Form onSubmit={this.handleSubmitPopUp2}>
+              <Button className="dodajPopUp2" variant="primary" type="submit">
+                DODAJ
+              </Button>
+              <div className="formPopUp2">
+                <Form.Group>
+                  <Form.Control
+                    type="text"
+                    className="popUp2TextInput"
+                    placeholder="Naziv polja"
+                    value={this.state.popUp2text}
+                    onChange={this.handleChange2PopUpText}
+                  />
+                  <Form.Control
+                    as="select"
+                    className="popUp2checkbox"
+                    value={this.state.popUp2type}
+                    onChange={this.handleChange2PopUpType}
+                  >
+                    <option>Izaberite</option>
+                    <option>Text</option>
+                    <option>Checkbox</option>
+                    <option>Textarea</option>
+                  </Form.Control>
+                </Form.Group>
+              </div>
+            </Form>
           </div>
         </div>
       </div>

@@ -46,7 +46,6 @@ const content = [
 
 class Navigation extends React.Component {
   render() {
-    console.log(folderStructure);
     return (
       <div className="row">
         <div className="col navigationBar">

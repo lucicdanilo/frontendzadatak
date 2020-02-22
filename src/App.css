@@ -128,6 +128,7 @@
 
 .informacijeoFolder {
   color: #28a9e3;
+  margin-left: 2%;
 }
 
 .opis {
@@ -321,10 +322,63 @@ td:last-child {
 .popUpTextInput {
   width: 90% !important;
   margin: 0px;
+  font-weight: 600 !important;
 }
 
 .popUpSacuvajIzmjene {
   position: absolute;
   bottom: 5%;
   right: 3%;
+}
+
+.popUpLabel {
+  color: #393b3e;
+  font-size: smaller;
+  margin-bottom: 0%;
+}
+
+#dodajPoljePopUp {
+  background: #f7fbff;
+  background-size: 100%;
+  border: 2px solid #393b3e;
+  border-radius: 7px;
+  width: 35%;
+  height: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.closePopUp2 {
+  float: right;
+  margin: 1%;
+}
+
+.titleDodajPoljePopUp {
+  float: left;
+  margin: 1%;
+  font-weight: bolder;
+}
+
+.dodajPopUp2 {
+  position: absolute;
+  bottom: 5%;
+  right: 3%;
+}
+
+.formPopUp2 {
+  margin-top: 8%;
+}
+
+.popUp2TextInput {
+  margin-left: 4%;
+  margin-top: 10%;
+}
+
+.popUp2checkbox {
+  margin-top: 2%;
+  margin-left: 4%;
 }
