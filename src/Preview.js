@@ -64,7 +64,44 @@ class Preview extends React.Component {
     this.setState({ popUp2type: event.target.value });
   }
 
-  handleSubmitPopUp() {}
+  handleSubmitPopUp = event => {
+    event.preventDefault();
+    var newValuesOfOldFields = [];
+    var nameOfAddedFields = [];
+    var valueOfAddedFields = [];
+    for (var i = 0; i <= 5; i++) {
+      newValuesOfOldFields.push(
+        document.getElementsByClassName("popUpTextInput")[i].value
+      );
+    }
+    for (
+      var i = 0;
+      i <= document.getElementsByClassName("nameOfAddedFields").length - 1;
+      i++
+    ) {
+      nameOfAddedFields.push(
+        document.getElementsByClassName("nameOfAddedFields")[i].innerHTML
+      );
+      if (
+        document.getElementsByClassName("valueOfAddedFields")[i].type ===
+        "checkbox"
+      ) {
+        if (document.getElementsByClassName("valueOfAddedFields")[i].checked) {
+          valueOfAddedFields.push("true");
+        } else {
+          valueOfAddedFields.push("false");
+        }
+      } else {
+        valueOfAddedFields.push(
+          document.getElementsByClassName("valueOfAddedFields")[i].value
+        );
+      }
+    }
+    document.getElementById("dimScreen").style.visibility = "hidden";
+    console.log(newValuesOfOldFields);
+    console.log(nameOfAddedFields);
+    console.log(valueOfAddedFields);
+  };
 
   render() {
     var idDokumenta = this.props.idDokumenta;
@@ -89,9 +126,6 @@ class Preview extends React.Component {
         i <= documentStructure[this.props.idDokumenta].length - 1;
         i++
       ) {
-        console.log(
-          documentStructure[this.props.idDokumenta][i]["id dokumenta"]
-        );
         if (
           documentStructure[this.props.idDokumenta][i]["id dokumenta"] ==
           idDokumenta
@@ -142,10 +176,13 @@ class Preview extends React.Component {
         this.fieldsFromPopUp.push(
           <div class="col">
             <Form.Group>
-              <Form.Label className="popUpLabel">
+              <Form.Label className="popUpLabel nameOfAddedFields">
                 {this.state.popUp2text}
               </Form.Label>
-              <Form.Control type="text" className="popUpTextInput" />
+              <Form.Control
+                type="text"
+                className="popUpTextInput valueOfAddedFields"
+              />
             </Form.Group>
           </div>
         );
@@ -154,10 +191,13 @@ class Preview extends React.Component {
         this.fieldsFromPopUp.push(
           <div class="col">
             <Form.Group>
-              <Form.Label className="popUpLabel">
+              <Form.Label className="popUpLabel nameOfAddedFields">
                 {this.state.popUp2text}
               </Form.Label>
-              <Form.Control type="checkbox" className="popUpCheckBox" />
+              <Form.Control
+                type="checkbox"
+                className="popUpCheckBox valueOfAddedFields"
+              />
             </Form.Group>
           </div>
         );
@@ -166,10 +206,13 @@ class Preview extends React.Component {
         this.fieldsFromPopUp.push(
           <div class="col">
             <Form.Group>
-              <Form.Label className="popUpLabel">
+              <Form.Label className="popUpLabel nameOfAddedFields">
                 {this.state.popUp2text}
               </Form.Label>
-              <Form.Control type="textarea" className="popUpTextArea" />
+              <Form.Control
+                type="textarea"
+                className="popUpTextArea valueOfAddedFields"
+              />
             </Form.Group>
           </div>
         );
