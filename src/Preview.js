@@ -64,41 +64,61 @@ class Preview extends React.Component {
 
   handleSubmitPopUp = event => {
     event.preventDefault();
-    var newValuesOfOldFields = [];
-    var nameOfAddedFields = [];
-    var valueOfAddedFields = [];
-    for (var i = 0; i <= 5; i++) {
-      newValuesOfOldFields.push(
-        document.getElementsByClassName("popUpTextInput")[i].value
-      );
-    }
-    for (
-      i = 0;
-      i <= document.getElementsByClassName("nameOfAddedFields").length - 1;
-      i++
-    ) {
-      nameOfAddedFields.push(
-        document.getElementsByClassName("nameOfAddedFields")[i].innerHTML
-      );
-      if (
-        document.getElementsByClassName("valueOfAddedFields")[i].type ===
-        "checkbox"
-      ) {
-        if (document.getElementsByClassName("valueOfAddedFields")[i].checked) {
-          valueOfAddedFields.push("jeste");
-        } else {
-          valueOfAddedFields.push("nije");
+    documentStructure.map(item => {
+      if (item["id dokumenta"] === this.props.idDokumenta) {
+        item["Naziv dokumenta"] = document.getElementsByClassName(
+          "popUpTextInput"
+        )[0].value;
+        item["Djelotvorni broj"] = document.getElementsByClassName(
+          "popUpTextInput"
+        )[1].value;
+        item["Opis dokumenta"] = document.getElementsByClassName(
+          "popUpTextInput"
+        )[2].value;
+        item["Subjekt"] = document.getElementsByClassName(
+          "popUpTextInput"
+        )[3].value;
+        item["Oznaka dokumenta"] = document.getElementsByClassName(
+          "popUpTextInput"
+        )[4].value;
+        item["Način prijema"] = document.getElementsByClassName(
+          "popUpTextInput"
+        )[5].value;
+        for (
+          var i = 0;
+          i <= document.getElementsByClassName("nameOfAddedFields").length - 1;
+          i++
+        ) {
+          if (
+            document.getElementsByClassName("valueOfAddedFields")[i].type ===
+            "checkbox"
+          ) {
+            if (
+              document.getElementsByClassName("valueOfAddedFields")[i].checked
+            ) {
+              item[
+                document.getElementsByClassName("nameOfAddedFields")[
+                  i
+                ].innerHTML
+              ] = "jeste";
+            } else {
+              item[
+                document.getElementsByClassName("nameOfAddedFields")[
+                  i
+                ].innerHTML
+              ] = "nije";
+            }
+          } else {
+            item[
+              document.getElementsByClassName("nameOfAddedFields")[i].innerHTML
+            ] = document.getElementsByClassName("valueOfAddedFields")[i].value;
+          }
         }
-      } else {
-        valueOfAddedFields.push(
-          document.getElementsByClassName("valueOfAddedFields")[i].value
-        );
       }
-    }
+    });
     document.getElementById("dimScreen").style.visibility = "hidden";
-    console.log(newValuesOfOldFields);
-    console.log(nameOfAddedFields);
-    console.log(valueOfAddedFields);
+    var documentStructureJSON = JSON.stringify(documentStructure);
+    console.log(documentStructureJSON);
   };
 
   render() {
