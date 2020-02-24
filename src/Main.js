@@ -18,65 +18,31 @@ class Main extends React.Component {
   };
 
   render() {
-    var idDokumenta = [];
-    var nazivDokumenta = [];
-    var broj = [];
-    var status = [];
-    var autor = [];
-    var tip = [];
-    var datum = [];
-
-    var nazivFoldera = folderInfo[this.state.id]["Naziv"];
-    var sektorFoldera = folderInfo[this.state.id]["Sektor"];
-    var datumKreiranjaFoldera = folderInfo[this.state.id]["Datum"];
-    var kreatorFoldera = folderInfo[this.state.id]["Kreator"];
-    var opisFoldera = folderInfo[this.state.id]["Opis"];
-
-    if (documentStructure[this.state.id].length) {
-      for (var i = 0; i <= documentStructure[this.state.id].length - 1; i++) {
-        idDokumenta.push(documentStructure[this.state.id][i]["id dokumenta"]);
-        nazivDokumenta.push(
-          documentStructure[this.state.id][i]["Naziv dokumenta"]
-        );
-        broj.push(documentStructure[this.state.id][i]["Broj"]);
-        status.push(documentStructure[this.state.id][i]["Status"]);
-        autor.push(documentStructure[this.state.id][i]["Autor"]);
-        tip.push(documentStructure[this.state.id][i]["Tip"]);
-        datum.push(documentStructure[this.state.id][i]["Datum"]);
-      }
-    } else {
-      idDokumenta.push(documentStructure[this.state.id]["id dokumenta"]);
-      nazivDokumenta.push(documentStructure[this.state.id]["Naziv dokumenta"]);
-      broj.push(documentStructure[this.state.id]["Broj"]);
-      status.push(documentStructure[this.state.id]["Status"]);
-      autor.push(documentStructure[this.state.id]["Autor"]);
-      tip.push(documentStructure[this.state.id]["Tip"]);
-      datum.push(documentStructure[this.state.id]["Datum"]);
-    }
-
     const rowsOfTable = [];
-    for (var i = 0; i <= idDokumenta.length - 1; i++) {
-      rowsOfTable.push(
-        <tr>
-          <td>{nazivDokumenta[i]}</td>
-          <td>{broj[i]}</td>
-          <td>{status[i]}</td>
-          <td>{autor[i]}</td>
-          <td>{tip[i]}</td>
-          <td>{datum[i]}</td>
-          <td>
-            <div id={idDokumenta[i]} onClick={this.callPreview}>
-              <ThreeDots className="iconInRow" size={23} color={"#98c6d7"} />
-            </div>
-          </td>
-        </tr>
-      );
-    }
+    documentStructure.map(document => {
+      if (document["id foldera"] === this.state.id) {
+        rowsOfTable.push(
+          <tr>
+            <td>{document["Naziv dokumenta"]}</td>
+            <td>{document["Broj"]}</td>
+            <td>{document["Status"]}</td>
+            <td>{document["Autor"]}</td>
+            <td>{document["Tip"]}</td>
+            <td>{document["Datum"]}</td>
+            <td>
+              <div id={document["id dokumenta"]} onClick={this.callPreview}>
+                <ThreeDots className="iconInRow" size={23} color={"#98c6d7"} />
+              </div>
+            </td>
+          </tr>
+        );
+      }
+    });
 
     return (
       <div className="row">
         <div className="col-7">
-          <h6 className="dokumentiNaslov">DOKUMENTI{this.state.idPreview}</h6>
+          <h6 className="dokumentiNaslov">DOKUMENTI</h6>
           <div className="opisFoldera">
             <div className="row">
               <p className="naslovinformacijeoFolder">
@@ -89,7 +55,9 @@ class Main extends React.Component {
                     }}
                   >
                     Naziv foldera:
-                    <span className="informacijeoFolder">{nazivFoldera}</span>
+                    <span className="informacijeoFolder">
+                      {folderInfo[this.state.id]["Naziv"]}
+                    </span>
                   </p>
                   <p
                     style={{
@@ -99,7 +67,9 @@ class Main extends React.Component {
                     }}
                   >
                     Sektor:
-                    <span className="informacijeoFolder">{sektorFoldera}</span>
+                    <span className="informacijeoFolder">
+                      {folderInfo[this.state.id]["Sektor"]}
+                    </span>
                   </p>
                   <p
                     style={{
@@ -110,7 +80,7 @@ class Main extends React.Component {
                   >
                     Datum kreiranja:
                     <span className="informacijeoFolder">
-                      {datumKreiranjaFoldera}
+                      {folderInfo[this.state.id]["Datum"]}
                     </span>
                   </p>
                   <p
@@ -121,11 +91,14 @@ class Main extends React.Component {
                     }}
                   >
                     Kreator:
-                    <span className="informacijeoFolder">{kreatorFoldera}</span>
+                    <span className="informacijeoFolder">
+                      {folderInfo[this.state.id]["Kreator"]}
+                    </span>
                   </p>
                 </div>
                 <div className="column">
-                  Opis: <p className="opis">{opisFoldera}</p>
+                  Opis:{" "}
+                  <p className="opis">{folderInfo[this.state.id]["Opis"]}</p>
                 </div>
               </p>
             </div>

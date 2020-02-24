@@ -1,6 +1,7 @@
-{
-  "0": {
-    "id dokumenta": 0,
+[
+  {
+    "id foldera": "0",
+    "id dokumenta": "0",
     "Naziv dokumenta": "Lorem ipsum dolor",
     "Broj": "1689",
     "Status": "Lorem ipsum",
@@ -15,74 +16,77 @@
     "Način prijema": "Lorem ipsum",
     "Ekstenzija": "doc"
   },
-  "1": [
-    {
-      "id dokumenta": 1,
-      "Naziv dokumenta": "Lorem dolro sit",
-      "Broj": "1312",
-      "Status": "Lorem ipsum",
-      "Autor": "Ivan Ivanović",
-      "Tip": "Lorem ipsum",
-      "Datum": "03.09.2020",
-      "Verzija": "1",
-      "Djelotvorni broj": "01/2-23/1-23",
-      "Opis dokumenta": "Lorem sit amet",
-      "Subjekt": "Lorem ipsum dolor sit amet ist est",
-      "Oznaka dokumenta": "01/2-23/1-23",
-      "Način prijema": "Lorem ipsumfd",
-      "Ekstenzija": "pdf"
-    },
-    {
-      "id dokumenta": 2,
-      "Naziv dokumenta": "Lorem ipsum",
-      "Broj": "1688",
-      "Status": "Lorem ipsum",
-      "Autor": "Nikola Nikolić",
-      "Tip": "Lorem ipsum",
-      "Datum": "16.12.2020",
-      "Verzija": "2",
-      "Djelotvorni broj": "05/2-23/1-19",
-      "Opis dokumenta": "Lorem ipsum dolor sit amet",
-      "Subjekt": "Lorem ipsum dolor sit amet",
-      "Oznaka dokumenta": "05/2-23/1-19",
-      "Način prijema": "Lorem ipsum",
-      "Ekstenzija": "doc"
-    },
-    {
-      "id dokumenta": 3,
-      "Naziv dokumenta": "Lorem ipsum dolor",
-      "Broj": "1656",
-      "Status": "Lorem ipsum",
-      "Autor": "Nikola Nikolić",
-      "Tip": "Lorem ipsum",
-      "Datum": "01.01.2020",
-      "Verzija": "2",
-      "Djelotvorni broj": "56/2-23/1-19",
-      "Opis dokumenta": "Lorem ipsuum dolor sit amet",
-      "Subjekt": "Lorem ipsum doloccr sit amet",
-      "Oznaka dokumenta": "56/2-23/1-19",
-      "Način prijema": "Lorem ipsum",
-      "Ekstenzija": "doc"
-    },
-    {
-      "id dokumenta": 4,
-      "Naziv dokumenta": "Lorem ipsum dolor upp",
-      "Broj": "1618",
-      "Status": "Lorem ipsum",
-      "Autor": "Marko Nikolić",
-      "Tip": "Lorem ipsum",
-      "Datum": "16.09.2018",
-      "Verzija": "5",
-      "Djelotvorni broj": "07/1-23/1-19",
-      "Opis dokumenta": "Lorem im dolor sit amet",
-      "Subjekt": "Lorem ipsum dffolor sit amet",
-      "Oznaka dokumenta": "07/1-23/1-19",
-      "Način prijema": "Lorem ipsum est",
-      "Ekstenzija": "pdf"
-    }
-  ],
-  "2": {
-    "id dokumenta": 5,
+  {
+    "id foldera": "1",
+    "id dokumenta": "1",
+    "Naziv dokumenta": "Lorem dolro sit",
+    "Broj": "1312",
+    "Status": "Lorem ipsum",
+    "Autor": "Ivan Ivanović",
+    "Tip": "Lorem ipsum",
+    "Datum": "03.09.2020",
+    "Verzija": "1",
+    "Djelotvorni broj": "01/2-23/1-23",
+    "Opis dokumenta": "Lorem sit amet",
+    "Subjekt": "Lorem ipsum dolor sit amet ist est",
+    "Oznaka dokumenta": "01/2-23/1-23",
+    "Način prijema": "Lorem ipsumfd",
+    "Ekstenzija": "pdf"
+  },
+  {
+    "id foldera": "1",
+    "id dokumenta": "2",
+    "Naziv dokumenta": "Lorem ipsum",
+    "Broj": "1688",
+    "Status": "Lorem ipsum",
+    "Autor": "Nikola Nikolić",
+    "Tip": "Lorem ipsum",
+    "Datum": "16.12.2020",
+    "Verzija": "2",
+    "Djelotvorni broj": "05/2-23/1-19",
+    "Opis dokumenta": "Lorem ipsum dolor sit amet",
+    "Subjekt": "Lorem ipsum dolor sit amet",
+    "Oznaka dokumenta": "05/2-23/1-19",
+    "Način prijema": "Lorem ipsum",
+    "Ekstenzija": "doc"
+  },
+  {
+    "id foldera": "1",
+    "id dokumenta": "3",
+    "Naziv dokumenta": "Lorem ipsum dolor",
+    "Broj": "1656",
+    "Status": "Lorem ipsum",
+    "Autor": "Nikola Nikolić",
+    "Tip": "Lorem ipsum",
+    "Datum": "01.01.2020",
+    "Verzija": "2",
+    "Djelotvorni broj": "56/2-23/1-19",
+    "Opis dokumenta": "Lorem ipsuum dolor sit amet",
+    "Subjekt": "Lorem ipsum doloccr sit amet",
+    "Oznaka dokumenta": "56/2-23/1-19",
+    "Način prijema": "Lorem ipsum",
+    "Ekstenzija": "doc"
+  },
+  {
+    "id foldera": "1",
+    "id dokumenta": "4",
+    "Naziv dokumenta": "Lorem ipsum dolor upp",
+    "Broj": "1618",
+    "Status": "Lorem ipsum",
+    "Autor": "Marko Nikolić",
+    "Tip": "Lorem ipsum",
+    "Datum": "16.09.2018",
+    "Verzija": "5",
+    "Djelotvorni broj": "07/1-23/1-19",
+    "Opis dokumenta": "Lorem im dolor sit amet",
+    "Subjekt": "Lorem ipsum dffolor sit amet",
+    "Oznaka dokumenta": "07/1-23/1-19",
+    "Način prijema": "Lorem ipsum est",
+    "Ekstenzija": "pdf"
+  },
+  {
+    "id foldera": "2",
+    "id dokumenta": "5",
     "Naziv dokumenta": "Lorem ipsum ipodioum",
     "Broj": "1639",
     "Status": "Lorem ipsum",
@@ -97,8 +101,9 @@
     "Način prijema": "Lorem ipsum",
     "Ekstenzija": "pdf"
   },
-  "3": {
-    "id dokumenta": 6,
+  {
+    "id foldera": "3",
+    "id dokumenta": "6",
     "Naziv dokumenta": "Lorem ipsum ametvc",
     "Broj": "1689",
     "Status": "Lorem ipsum",
@@ -113,8 +118,9 @@
     "Način prijema": "Lorem ipsum",
     "Ekstenzija": "doc"
   },
-  "4": {
-    "id dokumenta": 7,
+  {
+    "id foldera": "4",
+    "id dokumenta": "7",
     "Naziv dokumenta": "Lorem ipsu amet",
     "Broj": "1687",
     "Status": "Lorem ipsum",
@@ -129,8 +135,9 @@
     "Način prijema": "Lorem ipsum",
     "Ekstenzija": "pdf"
   },
-  "5": {
-    "id dokumenta": 8,
+  {
+    "id foldera": "5",
+    "id dokumenta": "8",
     "Naziv dokumenta": "Lorem",
     "Broj": "1688",
     "Status": "Ipsum lorem",
@@ -145,4 +152,4 @@
     "Način prijema": "Est orem ipsum ",
     "Ekstenzija": "doc"
   }
-}
+]

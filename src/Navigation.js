@@ -44,6 +44,9 @@ const content = [
   }
 ];
 
+console.log(folderStructure["FOLDERI"]);
+console.log(content);
+
 class Navigation extends React.Component {
   render() {
     return (
