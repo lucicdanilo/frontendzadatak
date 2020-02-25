@@ -1,128 +1,49 @@
-{
-  "FOLDERI": {
+[
+  {
     "id": 1,
-    "name": "Folder 1",
-    "folderType": "organizer",
-    "parentFolder": [
+    "label": "Folder 1",
+    "to": "0"
+  },
+  {
+    "id": 2,
+    "label": "Folder 2",
+    "content": [
       {
-        "id": 2,
-        "name": "Subfolder 1",
-        "folderType": "organizer",
-        "parentFolder": [
-          {
-            "id": 3,
-            "name": "1",
-            "folderType": "docFolder",
-            "parentFolder": null
-          },
+        "id": 3,
+        "label": "Subfolder 1",
+        "content": [
           {
             "id": 4,
-            "name": "2",
-            "folderType": "docFolder",
-            "parentFolder": null
+            "label": "Novi folder 1",
+            "to": "1"
           },
           {
             "id": 5,
-            "name": "3",
-            "folderType": "docFolder",
-            "parentFolder": null
+            "label": "2",
+            "to": "2"
+          },
+          {
+            "id": 6,
+            "label": "3",
+            "to": "3"
           }
         ]
       },
       {
-        "id": 6,
-        "name": "Subfolder 2",
-        "folderType": "organizer",
-        "parentFolder": [
-          {
-            "id": 7,
-            "name": "1",
-            "folderType": "docFolder",
-            "parentFolder": null
-          },
-          {
-            "id": 8,
-            "name": "2",
-            "folderType": "docFolder",
-            "parentFolder": null
-          },
-          {
-            "id": 9,
-            "name": "3",
-            "folderType": "docFolder",
-            "parentFodler": null
-          }
-        ]
+        "id": 7,
+        "label": "Subfolder 2",
+        "to": "4"
       },
       {
-        "id": 10,
-        "name": "Subfolder 3",
-        "folderType": "organizer",
-        "parentFolder": [
-          {
-            "id": 11,
-            "name": "1",
-            "folderType": "docFolder",
-            "parentFolder": null
-          },
-          {
-            "id": 12,
-            "name": "2",
-            "folderType": "docFolder",
-            "parentFolder": null
-          }
-        ]
+        "id": 8,
+        "label": "Subfolder 3",
+        "to": "5"
       },
       {
-        "id": 13,
-        "name": "Subfolder 4",
-        "folderType": "organizer",
-        "parentFolder": [
-          {
-            "id": 14,
-            "name": "1",
-            "folderType": "docFolder",
-            "parentFolder": null
-          },
-          {
-            "id": 15,
-            "name": "2",
-            "folderType": "docFolder",
-            "parentFolder": null
-          },
-          {
-            "id": 16,
-            "name": "3",
-            "folderType": "docFolder",
-            "parentFolder": null
-          },
-          {
-            "id": 17,
-            "name": "4",
-            "folderType": "docFolder",
-            "parentFolder": null
-          },
-          {
-            "id": 18,
-            "name": "5",
-            "folderType": "docFolder",
-            "parentFolder": null
-          }
-        ]
-      },
-      {
-        "id": 19,
-        "name": "Subfolder 5",
-        "folderType": "organizer",
-        "parentFolder": [
-          {
-            "id": 20,
-            "name": "1",
-            "folderType": "docFolder",
-            "parentFolder": null
-          }
-        ]
+        "id": 9,
+        "label": "Subfolder 4",
+        "to": "6"
       }
     ]
   }
-}
+]
