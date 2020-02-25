@@ -387,6 +387,17 @@ td:last-child {
   display: inline-flex;
 }
 
+/*
+.my-custom-scrollbar {
+  position: relative;
+  height: 500px;
+  overflow-x: hidden;
+}
+
+.table-wrapper-scroll-y {
+  display: block;
+}*/
+
 @media only screen and (max-width: 1500px) {
   .metismenu {
     font-size: 11pt;
@@ -429,5 +440,32 @@ td:last-child {
   }
   .column {
     font-size: 0.9rem !important;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .metismenu {
+    font-size: 8pt;
+  }
+  .nazivDokumenta {
+    font-size: 0.9rem !important;
+  }
+  .previewData {
+    font-size: 0.7rem !important;
+  }
+  .infoAboutDocument {
+    font-size: 0.7rem !important;
+  }
+  .izmjeniDocument {
+    font-size: 0.8rem !important;
+  }
+  .btn-link {
+    font-size: 0.8rem !important;
+  }
+  p.opis {
+    font-size: 0.8rem !important;
+  }
+  .column {
+    font-size: 0.8rem !important;
   }
 }

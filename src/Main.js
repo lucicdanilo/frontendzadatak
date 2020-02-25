@@ -103,7 +103,7 @@ class Main extends React.Component {
               </p>
             </div>
           </div>
-          <div>
+          <div className="table-wrapper-scroll-y my-custom-scrollbar">
             <Table className="table table-borderless table-sm table-hover">
               <thead>
                 <tr>
