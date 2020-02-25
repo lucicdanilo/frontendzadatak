@@ -66,8 +66,8 @@
 }
 
 .metismenu-link.active:hover {
-  text-decoration: none;
-  color: #f8fbff;
+  text-decoration: none !important;
+  color: #f8fbff !important;
 }
 
 .metismenu-link {
@@ -90,9 +90,9 @@
 }
 
 .metismenu-link:hover {
-  color: #37393c;
-  border-radius: 5px;
-  text-decoration: none;
+  color: #37393c !important;
+  border-radius: 5px !important;
+  text-decoration: none !important;
 }
 
 .metismenu-icon {
@@ -381,4 +381,8 @@ td:last-child {
 .popUp2checkbox {
   margin-top: 2%;
   margin-left: 4%;
+}
+
+.addedNewFields {
+  display: inline-flex;
 }

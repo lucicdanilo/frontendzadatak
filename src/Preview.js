@@ -422,7 +422,7 @@ class Preview extends React.Component {
                       </Form.Group>
                     </div>
                     <div class="w-100"></div>
-                    <div>{this.fieldsFromPopUp}</div>
+                    <div className="addedNewFields">{this.fieldsFromPopUp}</div>
                   </div>
                 </div>
                 <Button
