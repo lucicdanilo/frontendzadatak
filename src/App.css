@@ -386,3 +386,48 @@ td:last-child {
 .addedNewFields {
   display: inline-flex;
 }
+
+@media only screen and (max-width: 1500px) {
+  .metismenu {
+    font-size: 11pt;
+  }
+  .btn-primary {
+    font-size: 0.9rem !important;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .metismenu {
+    font-size: 10pt;
+  }
+  .btn-primary {
+    font-size: 0.8rem !important;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .metismenu {
+    font-size: 9pt;
+  }
+  .nazivDokumenta {
+    font-size: 1rem !important;
+  }
+  .previewData {
+    font-size: 0.8rem !important;
+  }
+  .infoAboutDocument {
+    font-size: 0.8rem !important;
+  }
+  .izmjeniDocument {
+    font-size: 0.9rem !important;
+  }
+  .btn-link {
+    font-size: 0.9rem !important;
+  }
+  p.opis {
+    font-size: 0.9rem !important;
+  }
+  .column {
+    font-size: 0.9rem !important;
+  }
+}
