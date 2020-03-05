@@ -1,10 +1,9 @@
 import React, { PureComponent } from "react";
-import Main from "./Main";
-import "./App.css";
-import folderStructure from "./json/folderStructure";
+import Main from "../components/Main";
+import "../App.css";
+import folderStructure from "../json/folderStructure";
 import MetisMenu from "react-metismenu";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import RouterLink from "react-metismenu-router-link";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class Navigation extends React.Component {
   render() {

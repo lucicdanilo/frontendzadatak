@@ -1,8 +1,8 @@
 import React from "react";
-import Preview from "./Preview";
-import "./App.css";
-import documentStructure from "./json/documentStructure";
-import folderInfo from "./json/folderInfo";
+import Preview from "../components/Preview";
+import "../App.css";
+import documentStructure from "../json/documentStructure";
+import folderInfo from "../json/folderInfo";
 import Table from "react-bootstrap/Table";
 import { ThreeDots } from "react-bootstrap-icons";
 

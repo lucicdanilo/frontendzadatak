@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import Navigation from "./Navigation";
-import Search from "./Search";
+import Navigation from "./components/Navigation";
+import Search from "./components/Search";
 import avatar from "./avatar.jpg";
 
 function App() {

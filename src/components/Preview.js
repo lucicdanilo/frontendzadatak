@@ -1,10 +1,10 @@
 import React from "react";
-import "./App.css";
+import "../App.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import { Envelope, Download, Upload, Plus, X } from "react-bootstrap-icons";
-import documentStructure from "./json/documentStructure";
+import documentStructure from "../json/documentStructure";
 
 class Preview extends React.Component {
   constructor(props) {
@@ -229,7 +229,7 @@ class Preview extends React.Component {
         case "pdf":
           return (
             <img
-              src={require("./icons/pdf.png")}
+              src={require("../icons/pdf.png")}
               height="35"
               width="30"
               alt=""
@@ -238,7 +238,7 @@ class Preview extends React.Component {
         case "doc":
           return (
             <img
-              src={require("./icons/doc.png")}
+              src={require("../icons/doc.png")}
               height="35"
               width="35"
               alt=""
