@@ -117,6 +117,7 @@ class Preview extends React.Component {
       }
     });
     document.getElementById("dimScreen").style.visibility = "hidden";
+    console.log(documentStructure);
     var documentStructureJSON = JSON.stringify(documentStructure);
     console.log(documentStructureJSON);
   };

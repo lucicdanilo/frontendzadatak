@@ -445,27 +445,30 @@ td:last-child {
 
 @media only screen and (max-width: 1200px) {
   .metismenu {
-    font-size: 8pt;
+    font-size: 7pt;
   }
   .nazivDokumenta {
-    font-size: 0.9rem !important;
+    font-size: 0.8rem !important;
   }
   .previewData {
-    font-size: 0.7rem !important;
+    font-size: 0.6rem !important;
   }
   .infoAboutDocument {
-    font-size: 0.7rem !important;
+    font-size: 0.6rem !important;
   }
   .izmjeniDocument {
-    font-size: 0.8rem !important;
+    font-size: 0.7rem !important;
   }
   .btn-link {
-    font-size: 0.8rem !important;
+    font-size: 0.7rem !important;
   }
   p.opis {
-    font-size: 0.8rem !important;
+    font-size: 0.7rem !important;
   }
   .column {
-    font-size: 0.8rem !important;
+    font-size: 0.7rem !important;
+  }
+  .btn-primary {
+    font-size: 0.6rem !important;
   }
 }
