@@ -387,6 +387,56 @@ td:last-child {
   display: inline-flex;
 }
 
+#popUp2textError {
+  margin-left: 5%;
+  font-size: small;
+  color: red;
+  visibility: hidden;
+}
+
+#popUp2typeError {
+  margin-left: 5%;
+  font-size: small;
+  color: red;
+  visibility: hidden;
+}
+
+#popUpNazivDokumentaError {
+  font-size: small;
+  color: red;
+  visibility: hidden;
+}
+
+#popUpDjelotvorniBrojError {
+  font-size: small;
+  color: red;
+  visibility: hidden;
+}
+
+#popUpOpisDokumentaError {
+  font-size: small;
+  color: red;
+  visibility: hidden;
+}
+
+#popUpSubjektError {
+  font-size: small;
+  color: red;
+  visibility: hidden;
+}
+
+#popUpOznakaDokumentaError {
+  font-size: small;
+  color: red;
+  visibility: hidden;
+}
+
+#popUpNacinPrijemaError {
+  font-size: small;
+  color: red;
+  visibility: hidden;
+}
+
 /*
 .my-custom-scrollbar {
   position: relative;
@@ -470,5 +520,44 @@ td:last-child {
   }
   .btn-primary {
     font-size: 0.6rem !important;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .titleBar {
+    height: 5%;
+  }
+  .accountBar > img {
+    margin-left: 5px;
+  }
+  .form-control {
+    width: 125% !important;
+    margin-left: -15%;
+  }
+  .searchBar {
+    max-width: 50% !important;
+    padding-left: 10% !important;
+  }
+  .searchBar > input {
+    margin-top: 3%;
+  }
+  .accountBar > img {
+    margin-left: 15px;
+  }
+  .navigationBar {
+    margin-top: 35%;
+  }
+  .metismenu {
+    font-size: 13pt;
+  }
+  #navbarToggle {
+    margin-top: -598%;
+  }
+  .metismenu {
+    margin-top: -15%;
+    margin-left: -35%;
+  }
+  .centralBar > .row {
+    margin-left: -30%;
   }
 }

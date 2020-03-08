@@ -25,10 +25,12 @@ class Preview extends React.Component {
   handleSubmitPopUp2(event) {
     event.preventDefault();
     if (this.state.popUp2type === "Izaberite" || this.state.popUp2type === "") {
-      alert("Izaberite tip polja");
-    } else if (this.state.popUp2text === "") {
-      alert("Unesite naziv polja");
+      document.getElementById("popUp2typeError").style.visibility = "visible";
+    } else if (this.state.popUp2text.length <= 2) {
+      document.getElementById("popUp2textError").style.visibility = "visible";
     } else {
+      document.getElementById("popUp2typeError").style.visibility = "hidden";
+      document.getElementById("popUp2textError").style.visibility = "hidden";
       document.getElementById("dodajPoljePopUp").style.visibility = "hidden";
       this.setState({ isPopUp2Clicked: 1 });
     }
@@ -44,6 +46,17 @@ class Preview extends React.Component {
     this.forceUpdate();
     document.getElementById("dimScreen").style.visibility = "hidden";
     document.getElementById("dodajPoljePopUp").style.visibility = "hidden";
+    document.getElementById("popUpNazivDokumentaError").style.visibility =
+      "hidden";
+    document.getElementById("popUpDjelotvorniBrojError").style.visibility =
+      "hidden";
+    document.getElementById("popUpOpisDokumentaError").style.visibility =
+      "hidden";
+    document.getElementById("popUpSubjektError").style.visibility = "hidden";
+    document.getElementById("popUpOznakaDokumentaError").style.visibility =
+      "hidden";
+    document.getElementById("popUpNacinPrijemaError").style.visibility =
+      "hidden";
   };
 
   showPopUpDodajPolje = () => {
@@ -52,6 +65,8 @@ class Preview extends React.Component {
 
   closePopUp2 = () => {
     document.getElementById("dodajPoljePopUp").style.visibility = "hidden";
+    document.getElementById("popUp2textError").style.visibility = "hidden";
+    document.getElementById("popUp2typeError").style.visibility = "hidden";
   };
 
   handleChange2PopUpText(event) {
@@ -64,26 +79,91 @@ class Preview extends React.Component {
 
   handleSubmitPopUp = event => {
     event.preventDefault();
+
+    var popUpNazivDokumentaError = 0;
+    var popUpDjelotvorniBrojError = 0;
+    var popUpOpisDokumentaError = 0;
+    var popUpSubjektError = 0;
+    var popUpOznakaDokumentaError = 0;
+    var popUpNacinPrijemaError = 0;
+
     documentStructure.map(item => {
       if (item["id dokumenta"] === this.props.idDokumenta) {
-        item["Naziv dokumenta"] = document.getElementsByClassName(
-          "popUpTextInput"
-        )[0].value;
-        item["Djelotvorni broj"] = document.getElementsByClassName(
-          "popUpTextInput"
-        )[1].value;
-        item["Opis dokumenta"] = document.getElementsByClassName(
-          "popUpTextInput"
-        )[2].value;
-        item["Subjekt"] = document.getElementsByClassName(
-          "popUpTextInput"
-        )[3].value;
-        item["Oznaka dokumenta"] = document.getElementsByClassName(
-          "popUpTextInput"
-        )[4].value;
-        item["Način prijema"] = document.getElementsByClassName(
-          "popUpTextInput"
-        )[5].value;
+        if (
+          document.getElementsByClassName("popUpTextInput")[0].value.length <= 2
+        ) {
+          document.getElementById("popUpNazivDokumentaError").style.visibility =
+            "visible";
+          this.popUpNazivDokumentaError = 1;
+        } else {
+          item["Naziv dokumenta"] = document.getElementsByClassName(
+            "popUpTextInput"
+          )[0].value;
+          this.popUpNazivDokumentaError = 0;
+        }
+        if (
+          document.getElementsByClassName("popUpTextInput")[1].value.length <= 2
+        ) {
+          document.getElementById(
+            "popUpDjelotvorniBrojError"
+          ).style.visibility = "visible";
+          this.popUpDjelotvorniBrojError = 1;
+        } else {
+          item["Djelotvorni broj"] = document.getElementsByClassName(
+            "popUpTextInput"
+          )[1].value;
+          this.popUpDjelotvorniBrojError = 0;
+        }
+        if (
+          document.getElementsByClassName("popUpTextInput")[2].value.length <= 2
+        ) {
+          document.getElementById("popUpOpisDokumentaError").style.visibility =
+            "visible";
+          this.popUpOpisDokumentaError = 1;
+        } else {
+          item["Opis dokumenta"] = document.getElementsByClassName(
+            "popUpTextInput"
+          )[2].value;
+          this.popUpOpisDokumentaError = 0;
+        }
+        if (
+          document.getElementsByClassName("popUpTextInput")[3].value.length <= 2
+        ) {
+          document.getElementById("popUpSubjektError").style.visibility =
+            "visible";
+          this.popUpSubjektError = 1;
+        } else {
+          item["Subjekt"] = document.getElementsByClassName(
+            "popUpTextInput"
+          )[3].value;
+          this.popUpSubjektError = 0;
+        }
+        if (
+          document.getElementsByClassName("popUpTextInput")[4].value.length <= 2
+        ) {
+          document.getElementById(
+            "popUpOznakaDokumentaError"
+          ).style.visibility = "visible";
+          this.popUpOznakaDokumentaError = 1;
+        } else {
+          item["Oznaka dokumenta"] = document.getElementsByClassName(
+            "popUpTextInput"
+          )[4].value;
+          this.popUpOznakaDokumentaError = 0;
+        }
+        if (
+          document.getElementsByClassName("popUpTextInput")[5].value.length <= 2
+        ) {
+          document.getElementById("popUpNacinPrijemaError").style.visibility =
+            "visible";
+          this.popUpNacinPrijemaError = 1;
+        } else {
+          item["Način prijema"] = document.getElementsByClassName(
+            "popUpTextInput"
+          )[5].value;
+          this.popUpNacinPrijemaError = 0;
+        }
+
         for (
           var i = 0;
           i <= document.getElementsByClassName("nameOfAddedFields").length - 1;
@@ -116,10 +196,31 @@ class Preview extends React.Component {
         }
       }
     });
-    document.getElementById("dimScreen").style.visibility = "hidden";
-    console.log(documentStructure);
-    var documentStructureJSON = JSON.stringify(documentStructure);
-    console.log(documentStructureJSON);
+    if (
+      !this.popUpNazivDokumentaError &&
+      !this.popUpDjelotvorniBrojError &&
+      !this.popUpOpisDokumentaError &&
+      !this.popUpSubjektError &&
+      !this.popUpOznakaDokumentaError &&
+      !this.popUpNacinPrijemaError
+    ) {
+      document.getElementById("dimScreen").style.visibility = "hidden";
+      document.getElementById("popUpNazivDokumentaError").style.visibility =
+        "hidden";
+      document.getElementById("popUpDjelotvorniBrojError").style.visibility =
+        "hidden";
+      document.getElementById("popUpOpisDokumentaError").style.visibility =
+        "hidden";
+      document.getElementById("popUpSubjektError").style.visibility = "hidden";
+      document.getElementById("popUpOznakaDokumentaError").style.visibility =
+        "hidden";
+      document.getElementById("popUpNacinPrijemaError").style.visibility =
+        "hidden";
+      console.log(documentStructure);
+      var documentStructureJSON = JSON.stringify(documentStructure);
+      console.log(documentStructureJSON);
+      console.log(this.popUpFormError);
+    }
   };
 
   render() {
@@ -137,6 +238,8 @@ class Preview extends React.Component {
     var oznakaDokumenta;
     var nacinPrijema;
     var ekstenzija;
+
+    var popUpFormError = 0;
 
     documentStructure.map(document => {
       if (document["id dokumenta"] === this.props.idDokumenta) {
@@ -361,6 +464,9 @@ class Preview extends React.Component {
                           className="popUpTextInput"
                           defaultValue={naziv}
                         />
+                        <span id="popUpNazivDokumentaError">
+                          Naziv dokumenta mora imati najmanje tri karaktera
+                        </span>
                       </Form.Group>
                     </div>
                     <div class="col">
@@ -373,6 +479,9 @@ class Preview extends React.Component {
                           className="popUpTextInput"
                           defaultValue={djelotvorniBroj}
                         />
+                        <span id="popUpDjelotvorniBrojError">
+                          Djelotvorni broj mora imati najmanje tri karaktera
+                        </span>
                       </Form.Group>
                     </div>
                     <div class="col">
@@ -385,6 +494,9 @@ class Preview extends React.Component {
                           className="popUpTextInput"
                           defaultValue={opisDokumenta}
                         />
+                        <span id="popUpOpisDokumentaError">
+                          Opis dokumenta mora imati najmanje tri karaktera
+                        </span>
                       </Form.Group>
                     </div>
                     <div class="w-100"></div>
@@ -396,6 +508,9 @@ class Preview extends React.Component {
                           className="popUpTextInput"
                           defaultValue={subjekt}
                         />
+                        <span id="popUpSubjektError">
+                          Subjekt mora imati najmanje tri karaktera
+                        </span>
                       </Form.Group>
                     </div>
                     <div class="col">
@@ -408,6 +523,9 @@ class Preview extends React.Component {
                           className="popUpTextInput"
                           defaultValue={oznakaDokumenta}
                         />
+                        <span id="popUpOznakaDokumentaError">
+                          Oznaka dokumenta mora imati najmanje tri karaktera
+                        </span>
                       </Form.Group>
                     </div>
                     <div class="col">
@@ -420,6 +538,9 @@ class Preview extends React.Component {
                           className="popUpTextInput"
                           defaultValue={nacinPrijema}
                         />
+                        <span id="popUpNacinPrijemaError">
+                          Način prijema mora imati najmanje tri karaktera
+                        </span>
                       </Form.Group>
                     </div>
                     <div class="w-100"></div>
@@ -454,6 +575,9 @@ class Preview extends React.Component {
                     value={this.state.popUp2text}
                     onChange={this.handleChange2PopUpText}
                   />
+                  <span id="popUp2textError">
+                    Naziv polja mora imati najmanje tri karaktera
+                  </span>
                   <Form.Control
                     as="select"
                     className="popUp2checkbox"
@@ -465,6 +589,7 @@ class Preview extends React.Component {
                     <option>Checkbox</option>
                     <option>Textarea</option>
                   </Form.Control>
+                  <span id="popUp2typeError">Izaberite tip polja</span>
                 </Form.Group>
               </div>
             </Form>
